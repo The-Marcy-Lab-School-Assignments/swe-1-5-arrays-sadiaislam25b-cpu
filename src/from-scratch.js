@@ -1,26 +1,27 @@
-const addToFrontOrBack = () => {
+const addToFrontOrBack = (arr, value, isFront) => {
+  if (isFront) arr.unshift(value);
+  else arr.push(value);
 };
 
-const reverseString = () => {
+const reverseString = (str) => str.split('').reverse().join('');
+
+const newArrayFullOf = (value, numOfValue) => new Array(numOfValue).fill(value);
+
+const insertIntoMiddle = (arr, value) => {
+  const middle = Math.floor(arr.length / 2);
+  arr.splice(middle, 0, value);
 };
 
-const newArrayFullOf = () => {
+const deleteFromMiddle = (arr) => {
+  const middle = Math.floor(arr.length / 2);
+  arr.splice(middle, 1);
 };
 
-const insertIntoMiddle = () => {
-};
+const isRightIndex = (arr, value, index) => arr[index] === value;
 
-const deleteFromMiddle = () => {
-};
+const roundAllNumsDown = (arr) => arr.map(num => Math.floor(num));
 
-const isRightIndex = () => {
-};
-
-const roundAllNumsDown = () => {
-};
-
-const getAllYCoordinates = () => {
-};
+const getAllYCoordinates = (arrOfCoords) => arrOfCoords.map(coord => coord[1]);
 
 module.exports = {
   addToFrontOrBack,
